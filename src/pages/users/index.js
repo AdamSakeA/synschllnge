@@ -1,5 +1,5 @@
-import UserList from "@/pages/users/UserList"
-import Layout from "@/components/layout"
+import UserList from './UserList'
+import Layout from '../../components/Layout'
 
 export default function Users() {
 
