@@ -1,7 +1,7 @@
 import axios from "axios"
 import Link from "next/link"
 import { useEffect, useState } from "react"
-import styles from '@/styles/blog.module.css'
+import styles from '../../styles/blog.module.css'
 
 export default function BlogList() {
   const [blogList, setBlogList] = useState([])
