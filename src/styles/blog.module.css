@@ -1,0 +1,25 @@
+.blog {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 30px;
+  margin: 50px 0px;
+}
+
+.blogListContents {
+  width: 500px;
+  padding: 10px 15px;
+  border: 1px black solid;
+  border-radius: 10px;  
+}
+
+.blogListContents:hover{
+  transition: 0.5s;
+  background-color: skyblue;
+}
+
+.blogLink {
+  color: black;
+}
+
+
+
