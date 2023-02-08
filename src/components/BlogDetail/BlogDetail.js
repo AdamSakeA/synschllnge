@@ -57,7 +57,7 @@ export default function BlogDetail() {
         console.log(error.response.data)
       }
     })
-    handleClickCommentsRef()
+    // handleClickCommentsRef()
   }
 
   // const ShowComments = () => {
@@ -77,9 +77,9 @@ export default function BlogDetail() {
   //   )
   // }
 
-  const handleClickCommentsRef = () => {
-    commentsRef.current.scrollIntoView({ behavior:"smooth" })
-  }
+  // const handleClickCommentsRef = () => {
+  //   commentsRef.current.scrollIntoView({ behavior:"smooth" })
+  // }
 
   const handleCloseComments = () => {
     setHandleShowComments(false)
@@ -108,7 +108,7 @@ export default function BlogDetail() {
           </div>
         )
       })}
-      {handleShowComments ? <CommentsPost userComments={userComments} handleCloseComments={handleCloseComments} ref={commentsRef}/> : "" }
+      {handleShowComments ? <CommentsPost userComments={userComments} handleCloseComments={handleCloseComments} ref={commentsRef}/> : null }
     </>
   )
 }
