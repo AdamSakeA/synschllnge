@@ -1,4 +1,4 @@
-import BlogDetail from '../../../components/blogdetail/BlogDetail'
+import BlogDetail from "../../../components/blogdetail/BlogDetail"
 import Layout from '../../../components/Layout'
 import { useRouter } from 'next/router'
 
