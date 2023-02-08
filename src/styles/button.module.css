@@ -1,0 +1,31 @@
+.btn {
+  border: none;
+  border-radius: 10px;
+  font-size: 12px;
+  font-weight: bold;
+  color: #2b2a2a;
+  background-color: rgb(174, 225, 245);
+  padding: 15px 20px;
+  box-shadow: 3px 5px 5px #d1d1d1;
+}
+
+.btn:hover {
+  box-shadow: 5px 8px 5px #888888;
+  transition: 0.5s;
+}
+
+.btn:disabled {
+  background-color: #bbbbbb;
+  color: rgb(142, 142, 142);
+}
+
+.btn:disabled:hover {
+  box-shadow: none;
+  transition: none;
+  cursor: default;
+}
+
+.btnContainer {
+  display: flex;
+  gap: 30px;
+}

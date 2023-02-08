@@ -2,6 +2,7 @@ import axios from "axios"
 import Link from "next/link"
 import { useEffect, useState } from "react"
 import styles from '../../styles/blog.module.css'
+import button from '../../styles/button.module.css'
 
 export default function BlogList() {
   const [blogList, setBlogList] = useState([])
@@ -37,25 +38,30 @@ export default function BlogList() {
       <div className={styles.blog}>
         {blogList.map((item, i) => {
           return (
-            <div key={i} className={`blog-contents ${styles.blogListContents}`}>
-              <Link href={{
-                pathname: "/blogs/[blogId]",
-                query: {
-                  blogId: `${item.user_id}`,
-                }
-              }}
-              legacyBehavior
-            ><a className={styles.blogLink}>{item.title}</a></Link>
-            </div>
+            <>
+            <Link href={{
+              pathname: "/blogs/[blogId]",
+              query: {
+                blogId: `${item.user_id}`,
+              }
+            }}
+            legacyBehavior>
+              <div key={i} className={`blog-contents ${styles.blogListContents}`}>
+                <h3 className={styles.blogLink}>{item.title}</h3>
+                <p>{item.body.slice(0,130)} ...</p>
+                <p>See Details</p>
+              </div>
+            </Link>
+            </>
           )
         })}
       </div>
-      <div>
+      <div className={button.btnContainer}>
         {page === 1 ? 
-          <button onClick={() => handlePrevPagination()} disabled>Prev Page</button> :
-          <button onClick={() => handlePrevPagination()}>Prev Page</button>
+          <button className={`${button.btn}`} onClick={() => handlePrevPagination()} disabled>Prev Page</button> :
+          <button className={`${button.btn}`} onClick={() => handlePrevPagination()}>Prev Page</button>
         }
-        <button onClick={() => handleNextPagination()}>Next Page</button>
+        <button className={`${button.btn}`} onClick={() => handleNextPagination()}>Next Page</button>
       </div>
     </>
   )

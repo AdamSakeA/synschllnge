@@ -1,6 +1,7 @@
 import { useState, useEffect } from "react"
 import axios from "axios"
 import Link from "next/link"
+import button from '../../styles/button.module.css'
 
 export default function UserList() {
   const [userList, setUserList] = useState([])
@@ -31,7 +32,6 @@ export default function UserList() {
     setPage(prevPage => prevPage - 1)
   }
 
-  console.log(userList)
   return (
     <div>
       {userList.map((item, i) => {
@@ -44,9 +44,12 @@ export default function UserList() {
           </div>
         )
       })}
-      <div>
-        <button onClick={() => handlePrevPagination()}>Prev Page</button>
-        <button onClick={() => handleNextPagination()}>Next Page</button>
+      <div className={button.btnContainer}>
+        {page === 1 ? 
+          <button className={button.btn} onClick={() => handlePrevPagination()} disabled>Prev Page</button> :
+          <button className={button.btn} onClick={() => handlePrevPagination()}>Prev Page</button>
+        }
+        <button className={button.btn} onClick={() => handleNextPagination()}>Next Page</button>
       </div>
     </div>
   )

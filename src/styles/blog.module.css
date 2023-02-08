@@ -8,18 +8,19 @@
 .blogListContents {
   width: 500px;
   padding: 10px 15px;
-  border: 1px black solid;
-  border-radius: 10px;  
+  border-radius: 10px;
+  box-shadow: 3px 5px 8px #d1d1d1;
+  cursor: pointer;  
 }
 
 .blogListContents:hover{
   transition: 0.5s;
-  background-color: skyblue;
+  background-color: rgb(174, 225, 245);
+  box-shadow: 5px 8px 5px #888888;
+  border: none;
 }
 
 .blogLink {
   color: black;
 }
-
-
 
