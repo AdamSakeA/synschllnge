@@ -1,4 +1,4 @@
-import BlogList from './bloglist'
+import BlogList from '../../pages/blogs/BlogList'
 import Layout from '../../components/Layout'
 
 export default function Blogs() {
