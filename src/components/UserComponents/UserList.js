@@ -9,7 +9,7 @@ export default function UserList() {
 
   useEffect(() => {
     const getUsersList = async() => {
-      await axios.get(`https://gorest.co.in/public/v2/users?page=${page}&per_page=10`)
+      await axios.get(`https://gorest.co.in/public/v2/users/?access-token=c86bdd87d5714dddfdf57887c16ede322f59d3cb76c13b677c2a1f0a59cfe411`)
       .then(response => {
         setUserList(response.data)
       })
@@ -24,13 +24,13 @@ export default function UserList() {
   }, [page])
 
 
-  const handleNextPagination = () => {
-    setPage(prevPage => prevPage + 1)
-  }
+  // const handleNextPagination = () => {
+  //   setPage(prevPage => prevPage + 1)
+  // }
 
-  const handlePrevPagination = () => {
-    setPage(prevPage => prevPage - 1)
-  }
+  // const handlePrevPagination = () => {
+  //   setPage(prevPage => prevPage - 1)
+  // }
 
   return (
     <div>
@@ -40,17 +40,22 @@ export default function UserList() {
             <h2>{item.name}</h2>
             <p>{item.email}</p>
             <p>{item.status}</p>
-            <Link href={`blogs/${item.id}`} legacyBehavior><a>See Details</a></Link>
+            <Link href={{
+                  pathname: "/users/[userId]",
+                  query: {
+                    userId: `${item.id}`
+                  }
+                }} legacyBehavior>See Details</Link>
           </div>
         )
       })}
-      <div className={button.btnContainer}>
+      {/* <div className={button.btnContainer}>
         {page === 1 ? 
           <button className={button.btn} onClick={() => handlePrevPagination()} disabled>Prev Page</button> :
           <button className={button.btn} onClick={() => handlePrevPagination()}>Prev Page</button>
         }
         <button className={button.btn} onClick={() => handleNextPagination()}>Next Page</button>
-      </div>
+      </div> */}
     </div>
   )
 }

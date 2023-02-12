@@ -1,15 +1,13 @@
-import BlogDetail from '../../../components/BlogComponents/BlogDetail'
+import UserDetail from '../../../components/UserComponents/UserDetail'
 import Layout from '../../../components/Layout'
 import { useRouter } from 'next/router'
 
-export default function Blog() {
+export default function User() {
   const router = useRouter()
-
   return (
-    <Layout title="Blog Detail">
+    <Layout title={"User Detail"}>
       <a onClick={() => {router.back()}}>Go Back</a>
-      <h1>Blog Detail</h1>
-      <BlogDetail />
+      <UserDetail />
     </Layout>
   )
 }

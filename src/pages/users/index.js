@@ -1,4 +1,4 @@
-import UserList from './UserList'
+import UserList from '../../components/UserComponents/UserList'
 import Layout from '../../components/Layout'
 
 export default function Users() {
