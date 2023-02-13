@@ -80,7 +80,7 @@ export default function BlogDetail() {
           <button onClick={() => handleCommentPostUser(userPost.id)} disabled>See Comments</button> :
           <button onClick={() => handleCommentPostUser(userPost.id)}>See Comments</button>}
       </div>
-      {handleShowComments ? <CommentsPost userComments={userComments} handleCloseComments={handleCloseComments} ref={commentsRef} /> : null}
+      {handleShowComments ? <CommentsPost userComments={userComments} handleCloseComments={handleCloseComments} postId={postId}/> : null}
     </>
   );
 }

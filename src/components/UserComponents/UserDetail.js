@@ -3,6 +3,7 @@ import { useRouter } from "next/router"
 import { useEffect, useState } from "react"
 import Link from "next/link"
 import styles from '../../styles/blog.module.css'
+import UserPostBlog from "./UserPostBlog"
 
 export default function UserDetail() {
   const router = useRouter()
@@ -65,7 +66,6 @@ export default function UserDetail() {
           <p>No article</p>
         }
       </div>
-
     )
   }
 
@@ -77,6 +77,7 @@ export default function UserDetail() {
       <p>{userData.gender}</p>
       <p>{userData.status}</p>
     </div>
+    <UserPostBlog />
     {userData.gender === "male" ? <h2>Him Articles</h2> : <h2>Her Articles</h2>}
     <UserPosts />
     </>
