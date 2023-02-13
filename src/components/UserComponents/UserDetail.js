@@ -7,7 +7,6 @@ import UserPostBlog from "./UserPostBlog"
 import stylesUser from '../../styles/userDetail.module.css'
 import { CgGenderFemale, CgGenderMale } from 'react-icons/cg'
 import { IoMdInformationCircle,IoMdSettings } from 'react-icons/io'
-import { IoSettingsSharp } from 'react-icons/io5'
 
 export default function UserDetail() {
   const router = useRouter()
