@@ -1,0 +1,33 @@
+.userDetail {
+  color: white;
+  margin: 20px 0;
+  display: flex;
+  gap: 10px;
+  flex-direction: column;
+}
+
+.userContainer {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  margin-bottom: 30px;
+}
+
+.iconUser {
+  font-size: 50px;
+  color: white;
+}
+
+.userNotFound {
+  color: white;
+  font-style: italic;
+}
+
+.btnLink {
+  color: rgb(0, 123, 123);
+  margin-top: 20px;
+  background-color: transparent;
+  border: none;
+  font-weight: 600;
+  font-size: 16px;
+}

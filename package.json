@@ -11,13 +11,12 @@
   "dependencies": {
     "@next/font": "13.1.3",
     "axios": "^1.2.3",
-    "cookies-next": "^2.1.1",
     "eslint": "8.32.0",
     "eslint-config-next": "13.1.3",
     "next": "13.1.3",
     "react": "18.2.0",
-    "react-cookie": "^4.1.1",
     "react-dom": "18.2.0",
+    "react-icons": "^4.7.1",
     "react-infinite-scroller": "^1.2.6"
   }
 }

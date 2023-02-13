@@ -6,7 +6,7 @@ export default function User() {
   const router = useRouter()
   return (
     <Layout title={"User Detail"}>
-      <a onClick={() => {router.back()}}>Go Back</a>
+      <a className='btn-link' onClick={() => {router.back()}}>Go Back</a>
       <UserDetail />
     </Layout>
   )

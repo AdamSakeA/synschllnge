@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useRouter } from "next/router"
+import styles from '../../styles/settingsuser.module.css'
 
 export default function RegisterUser() {
   const router = useRouter()
@@ -28,8 +29,8 @@ export default function RegisterUser() {
   }
   
   return (
-    <>
-      <form onSubmit={handleFormOnSubmit}>
+    <form className={styles.formRegister} onSubmit={handleFormOnSubmit}>
+      <div className={styles.formSettings}>
         <p>Name :</p>
         <input id="name" type="text" name="name" required/>
         <p>E-mail :</p>
@@ -38,8 +39,8 @@ export default function RegisterUser() {
         <input id="gender" type="text" name="gender" required/>
         <p>Status active / inactive:</p>
         <input id="status" type="text" name="status" required/>
-        <button type="submit">Register</button>
-      </form>
-    </>
+      </div>
+        <button className="btn-secondary" type="submit">Register</button>
+    </form>
   )
 }

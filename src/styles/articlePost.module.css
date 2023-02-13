@@ -1,0 +1,56 @@
+.formPostArticle {
+  color: white;
+  background-color: rgba(60, 60, 60, 0.5);
+  border: 0.5px solid rgb(172, 172, 172);
+  border-radius: 20px;
+  cursor: default;
+  padding: 20px 40px;
+  margin-top: 30px;
+}
+
+.articlePostContainer {
+  display: flex;
+  flex-direction: column;
+  -ms-flex-direction: column;
+  margin-bottom: 20px;
+  cursor: default;
+}
+
+.titlePostContainer {
+  margin-bottom: 10px;
+}
+
+.titlePostContainer p {
+  font-size: 12px;
+  letter-spacing: 1px;
+  margin-bottom: 10px;
+}
+
+.titlePostContainer input {
+  padding: 7px 18px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgb(0, 123, 123);
+  margin-bottom: 30px;
+}
+
+.titlePostContainer textarea {
+  width: 100%;
+  height: 150px;
+  border: 1px solid rgb(0, 123, 123);
+  border-radius: 10px;
+  background-color: transparent;
+  color: white;
+  padding: 7px 18px;
+}
+
+.titlePostContainer input:focus {
+  outline: none;
+  color: white;
+}
+.titlePostContainer textarea:focus {
+  outline: none;
+  color: white;
+}

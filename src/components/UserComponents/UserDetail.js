@@ -4,6 +4,10 @@ import { useEffect, useState } from "react"
 import Link from "next/link"
 import styles from '../../styles/blog.module.css'
 import UserPostBlog from "./UserPostBlog"
+import stylesUser from '../../styles/userDetail.module.css'
+import { CgGenderFemale, CgGenderMale } from 'react-icons/cg'
+import { IoMdInformationCircle,IoMdSettings } from 'react-icons/io'
+import { IoSettingsSharp } from 'react-icons/io5'
 
 export default function UserDetail() {
   const router = useRouter()
@@ -63,23 +67,57 @@ export default function UserDetail() {
               )
             })}
           </div> : 
-          <p>No article</p>
+          <p className="desc">No article</p>
         }
       </div>
     )
   }
 
+  const HandleLinkSettings = () => {
+    return (
+      <>
+        <Link href={{
+          pathname: "/users/[userId]/settings",
+          query: {
+            userId
+          }
+        }}>
+          <div className={stylesUser.descContainer}>
+            <IoMdSettings className={stylesUser.iconDesc}/>
+            <p className={stylesUser.desc}>Settings</p>
+          </div>
+        </Link> 
+      </>
+    )
+  }
+
   return (
     <>
-    <div>
-      <h2>{userData.name}</h2>
-      <h3>{userData.email}</h3>
-      <p>{userData.gender}</p>
-      <p>{userData.status}</p>
+    <div className={stylesUser.userDetailContainer}>
+      <h2 className="title-homepage">{userData.name}</h2>
+      <h3 className="title-h3">{userData.email}</h3>
+      <div className={stylesUser.descContainers}>
+        {userData.gender === "male" ? 
+          <div className={stylesUser.descContainer}>
+            <CgGenderMale className={stylesUser.iconDesc}/>
+            <p className={stylesUser.desc}>{userData.gender}</p>
+          </div>
+          :
+          <div className={stylesUser.descContainer}>
+            <CgGenderFemale className={stylesUser.iconDesc}/>
+            <p className={stylesUser.desc}>{userData.gender}</p>
+        </div>
+        }
+        <div className={stylesUser.descContainer}>
+          <IoMdInformationCircle className={stylesUser.iconDesc}/>
+          <p className={stylesUser.desc}>{userData.status}</p>
+        </div>
+        <HandleLinkSettings />
+      </div>
     </div>
-    <UserPostBlog />
-    {userData.gender === "male" ? <h2>Him Articles</h2> : <h2>Her Articles</h2>}
+    {userData.gender === "male" ? <h2 className="title-h3">Him Articles</h2> : <h2 className="title-h3">Her Articles</h2>}
     <UserPosts />
+    <UserPostBlog />
     </>
   )
 }

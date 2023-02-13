@@ -1,0 +1,57 @@
+.breadcrumbs {
+  display: flex;
+  gap: 20px;
+}
+
+.breadcrumbs h2 {
+  color: white;
+  cursor: default;
+}
+
+.titleBreadcrumbs {
+  color: white;
+  cursor: pointer;
+}
+
+.formSettings {
+  display: flex;
+  flex-direction: column;
+  color: white;
+  background-color: rgba(60, 60, 60, 0.5);
+  border: 0.5px solid rgb(172, 172, 172);
+  cursor: pointer;  
+  padding: 20px 40px;
+  border-radius: 20px;
+  cursor: default;
+  margin-bottom: 20px;
+}
+
+.formSettings input {
+  padding: 7px 18px;
+  width: 300px;
+  border-radius: 20px;
+  background-color: transparent;
+  color: white;
+  border: 1px solid rgb(0, 123, 123);
+  margin-top: 10px;
+  margin-bottom: 20px;
+}
+
+.formSettings input:focus {
+  outline: none;
+  color: white;
+}
+
+.deleteUserContainer {
+  margin-top: 20px;
+}
+
+.settingsBtnContainer {
+  display: flex;
+  gap: 30px;
+  margin-top: 30px;
+}
+
+.formRegister {
+  margin-top: 30px;
+}

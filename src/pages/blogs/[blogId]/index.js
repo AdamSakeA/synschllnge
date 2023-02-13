@@ -7,8 +7,8 @@ export default function Blog() {
 
   return (
     <Layout title="Blog Detail">
-      <a onClick={() => {router.back()}}>Go Back</a>
-      <h1>Blog Detail</h1>
+      <a className='btn-link' onClick={() => {router.back()}}>Go Back</a>
+      <h1 className='title-homepage'>Blog Detail</h1>
       <BlogDetail />
     </Layout>
   )

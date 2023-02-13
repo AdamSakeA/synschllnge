@@ -15,7 +15,7 @@ export default function BlogContainer(props) {
               postId: `${item.id}`
             }
           }} key={i} legacyBehavior>
-            <div className={`blog-contents ${styles.blogListContents}`}>
+            <div className={styles.blogListContents}>
               <h3 className={styles.blogLink}>{item.title}</h3>
               <p>{item.body.slice(0,130)} ...</p>
             </div>

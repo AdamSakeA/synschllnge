@@ -1,0 +1,32 @@
+.userDetailContainer {
+  margin: 20px 0;
+}
+
+.userDetailContainer .icon {
+  font-size: 100px;
+  color: white;
+}
+
+.descContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 10px;
+}
+
+.descContainers {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+  gap: 50px;
+}
+
+.descContainer .iconDesc {
+  font-size: 20px;
+  color: white;
+  text-decoration: none;
+}
+
+.desc {
+  color: white;
+}

@@ -1,5 +1,6 @@
 import axios from "axios"
 import { useRouter } from "next/router" 
+import styles from '../../styles/articlePost.module.css'
 
 export default function UserPostBlog() {
   const router = useRouter()
@@ -28,15 +29,17 @@ export default function UserPostBlog() {
     })
   }
   return (
-    <>
-      <h3>Post Article</h3>
-      <form onSubmit={postArticle}>
-        <p>Title</p>
-        <input id="title" name="title" type="text" placeholder='Title Article'/>
-        <p>Body</p>
-        <input id="body" name="body" type="text" placeholder='Contents'/>
-        <button type="submit">Post</button>
-      </form>
-    </>
+    <form className={styles.formPostArticle} onSubmit={postArticle}>
+      <div className={styles.articlePostContainer}>
+        <h3 className="title-h3">Post Article</h3>
+        <div className={styles.titlePostContainer}>
+          <p>Title</p>
+          <input id="title" name="title" type="text" placeholder='Title Article' required/>
+          <p>Body</p>
+          <textarea id="body" name="body" type="text" placeholder='Contents' required/>
+        </div>
+      </div>
+      <button className="btn-secondary" type="submit">Post</button>
+    </form>
   )
 }

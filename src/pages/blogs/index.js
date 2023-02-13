@@ -4,6 +4,7 @@ import Layout from '../../components/Layout'
 import InfiniteScroll from 'react-infinite-scroller'
 import LoadingSpinners from '../../components/LoadingSpinners'
 import BlogContainer from '@/components/BlogComponents/BlogContainer'
+import styles from '../../styles/blog.module.css'
 
 export default function Blogs() {
   const [blogList, setBlogList] = useState([])
@@ -32,16 +33,17 @@ export default function Blogs() {
 
   return (
     <Layout title="Blogs Page">
-        <h1>WELCOME TO BLOG</h1>
-        <InfiniteScroll
-        threshold={0}
-        pageStart={0}
-        loadMore={getBlogList}
-        hasMore={moreItems}
-        loader={<LoadingSpinners />}>
-          <BlogContainer list={blogList}/>
-        </InfiniteScroll>
-        {moreItems ? null : <div><h3>no data anymore..</h3></div> }      
+      <div className={styles.bg}></div>
+      <h1 className={`title-homepage`}>Blog Lists</h1>
+      <InfiniteScroll
+      threshold={0}
+      pageStart={0}
+      loadMore={getBlogList}
+      hasMore={moreItems}
+      loader={<LoadingSpinners />}>
+        <BlogContainer list={blogList}/>
+      </InfiniteScroll>
+      {moreItems ? null : <div><h3>no data anymore..</h3></div> }      
     </Layout>
   )
 }

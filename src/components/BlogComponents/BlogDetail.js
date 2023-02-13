@@ -1,12 +1,13 @@
 import { useEffect, useState, useRef } from 'react';
 import { useRouter } from 'next/router';
 import CommentsPost from './CommentsPost';
-import blogDetail from '../../styles/blogDetail.module.css';
+import styles from '../../styles/blogDetail.module.css';
 import axios from 'axios';
+import {FaUserAlt} from 'react-icons/fa'
+// import { Face, Face3 } from '@mui/icons-material';
 
 export default function BlogDetail() {
   const router = useRouter();
-  const commentsRef = useRef(null);
   const userId = router.query.blogId;
   const postId = router.query.postId;
   const [userDetail, setUserDetail] = useState({});
@@ -66,20 +67,27 @@ export default function BlogDetail() {
 
   return (
     <>
-      {userDetail === "Resource not found" || undefined ? <p>User not found</p> : 
-        <div>
-          <h2>{userDetail.name}</h2>
-          <p>{userDetail.email}</p>
-          <p>{userDetail.gender}</p>
+      {userDetail === "Resource not found" || undefined ?
+        <div className={styles.userContainer}>
+          <FaUserAlt className={styles.iconUser} />
+          <p className='desc'>User not found</p> 
+        </div> 
+        : 
+        <div className={styles.userContainer}>
+          <FaUserAlt className={styles.iconUser} />
+          <div className={styles.userDetail}>
+            <h2>{userDetail.name}</h2>
+            <p>{userDetail.email}</p>
+            <p>{userDetail.gender}</p>
+          </div>
         </div>
       }
-      <div className={blogDetail.test}>
-        <h2>{userPost.title}</h2>
-        <p>{userPost.body}</p>
-        {handleShowComments ?
-          <button onClick={() => handleCommentPostUser(userPost.id)} disabled>See Comments</button> :
-          <button onClick={() => handleCommentPostUser(userPost.id)}>See Comments</button>}
+      <div>
+        <h2 className='title'>{userPost.title}</h2>
+        <p className='desc'>{userPost.body}</p>
       </div>
+        {handleShowComments ? null :
+          <button className={styles.btnLink} onClick={() => handleCommentPostUser(userPost.id)}>See Comments</button>}
       {handleShowComments ? <CommentsPost userComments={userComments} handleCloseComments={handleCloseComments} postId={postId}/> : null}
     </>
   );

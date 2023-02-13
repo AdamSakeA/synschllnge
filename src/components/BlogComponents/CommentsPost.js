@@ -1,6 +1,7 @@
 import { useRouter } from 'next/router'
-import blogDetail from '../../styles/blogDetail.module.css'
 import axios from 'axios';
+import styles from '../../styles/comments.module.css'
+import btn from '../../styles/blogDetail.module.css'
 
 
 export default function CommentsPost({ userComments, ...props }) {
@@ -34,25 +35,34 @@ export default function CommentsPost({ userComments, ...props }) {
 
   return (
     <>
-      <div className={blogDetail.commentsUser}>
-        <form onSubmit={handleCommentPostUser}>
-          <h3>Create a comment</h3>
-          <p>Name</p>
-          <input id="name" name='name' type="text" placeholder='Input your name...' />
-          <p>Email</p>
-          <input id="email" name='email' type="text" placeholder='Input your email...' />
-          <input id="comment" name='comment' type="text" placeholder='Comments..' />
-          <button type='submit'>Comment</button>
-        </form>
+      <div className={styles.commentsContainer}>
+        <h3 className='title-h3'>Comments</h3>
         {userComments.map((item, i) => {
-          return (
-            <div key={i}>
-              <h3>{item.name}</h3>
-              <p>{item.body}</p>
+            return (
+              <div key={i} className={styles.userComments}>
+                <h3>{item.name}</h3>
+                <p>{item.body}</p>
+              </div>
+            )
+          })}
+        <form className={styles.formComment} onSubmit={handleCommentPostUser}>
+          <h3>Create a comment</h3>
+          <div className={styles.formCommentData}>
+            <div className={styles.form}>
+              <p>Name</p>
+              <input id="name" name='name' type="text" placeholder='Input your name...' required />
             </div>
-          )
-        })}
-        <button onClick={() => props.handleCloseComments()}>Close Comments</button>
+            <div className={styles.form}>
+              <p>Email</p>
+              <input id="email" name='email' type="text" placeholder='Input your email...' required />
+            </div>
+          </div>
+          <div className={styles.formSubmitData}>
+            <textarea id="comment" name='comment' type="text" placeholder='Comments..' required />
+            <button className='btn-secondary' type='submit'>Post Comment</button>
+          </div>
+        </form>
+        <button className={btn.btnLink} onClick={() => props.handleCloseComments()}>Close Comments</button>
       </div>
     </>
   )
