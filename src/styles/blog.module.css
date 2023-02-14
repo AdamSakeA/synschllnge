@@ -24,10 +24,6 @@
 }
 
 .blogLink {
-  /* color: #0175da; */
-  /* background: linear-gradient(90deg, rgba(1,117,218,1) 0%, rgba(0,131,154,1) 59%);
-  -webkit-text-fill-color: transparent;
-  -webkit-background-clip: text; */
   font-size: 23px;
   margin-bottom: 20px;
 }
@@ -50,5 +46,11 @@
   background: linear-gradient(180deg, rgba(37, 181, 201, 0.37) 0%, rgba(27, 44, 47, 0) 100%);
   filter: blur(132px);
   z-index: 0;
+}
+
+@media only screen and (max-width: 600px) {
+  .bg {
+    display: none;
+  }
 }
 

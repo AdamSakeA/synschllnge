@@ -3,9 +3,10 @@
   gap: 20px;
 }
 
-.breadcrumbs h2 {
+.breadcrumbs h3 {
   color: white;
   cursor: default;
+  margin-bottom: 20px;
 }
 
 .titleBreadcrumbs {
@@ -54,4 +55,10 @@
 
 .formRegister {
   margin-top: 30px;
+}
+
+@media only screen and (max-width: 600px) {
+  .formSettings input {
+    width: 100%;
+  }
 }

@@ -14,7 +14,7 @@ export default function Home() {
   return (
     <Layout title="Home Page">
       <div className={styles.bg}></div>
-      <div className={`${styles.homePage} section`}>
+      <div className={styles.homePage}>
         <h1 className="title">Hallo!</h1>
         <h1 className="title-homepage">Welcome to synapsis challange</h1>
         <p className="desc">Please read readme.md for usage this fake article & this fake article use from https://gorest.co.in/</p>

@@ -94,7 +94,7 @@ export default function UserDetail() {
     <>
     <div className={stylesUser.userDetailContainer}>
       <h2 className="title-homepage">{userData.name}</h2>
-      <h3 className="title-h3">{userData.email}</h3>
+      <h3 className={`title-h3 ${stylesUser.titleEmail}`}>{userData.email}</h3>
       <div className={stylesUser.descContainers}>
         {userData.gender === "male" ? 
           <div className={stylesUser.descContainer}>

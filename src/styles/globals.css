@@ -128,3 +128,25 @@ a {
   border: 1px solid rgb(2, 185, 185);
   box-shadow: 1px 1px 8px rgb(2, 185, 185);
 }
+
+@media only screen and (max-width: 600px) {
+  .container {
+    padding: 1rem 1.5rem;
+    font: serif;
+    margin-top: 5rem;
+  }
+  .title {
+    color: white;
+    letter-spacing: 2px;
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+  .title-homepage {
+    font-size: 30px;
+    max-width: 100%;
+  }
+  .btn-secondary {
+    width: 100%;
+  }
+
+}

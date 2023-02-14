@@ -49,7 +49,7 @@
 
 .form input {
   padding: 7px 18px;
-  width: 300px;
+  width: 100%;
   border-radius: 20px;
   background-color: transparent;
   color: white;
@@ -74,4 +74,14 @@
 
 .formSubmitData textarea:focus{
   outline: none;
+}
+
+@media only screen and (max-width: 600px) {
+  .formCommentData{
+    gap: 10px;
+    flex-direction: column;
+  }
+  .form input {
+    max-width: 100%;
+  }
 }

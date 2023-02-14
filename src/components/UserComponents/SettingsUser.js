@@ -3,7 +3,6 @@ import axios from 'axios'
 import { useEffect, useState } from 'react'
 import { useRouter } from 'next/router'
 import styles from '../../styles/settingsuser.module.css'
-// import btn from '../../../styles/blogDetail.module.css'
 
 export default function SettingsUser() {
 	const [isOpen, setIsOpen] = useState(true)
@@ -96,9 +95,9 @@ export default function SettingsUser() {
     const BreadCrumbs = () => {
       return (
         <div className={styles.breadcrumbs}>
-          <h3 className={isOpen ? "btn-link" : styles.titleBreadcrumbs} onClick={() => setIsOpen(true)}>Personal Information</h3>
-          <h2>/</h2>
-          <h3 className={!isOpen ? "btn-link" : styles.titleBreadcrumbs} onClick={() => setIsOpen(false)}>Delete User</h3>
+          <h4 className={isOpen ? "btn-link" : styles.titleBreadcrumbs} onClick={() => setIsOpen(true)}>Personal Information</h4>
+          <h3>/</h3>
+          <h4 className={!isOpen ? "btn-link" : styles.titleBreadcrumbs} onClick={() => setIsOpen(false)}>Delete User</h4>
         </div>
       )
     }

@@ -20,3 +20,17 @@
   gap: 30px;
   margin: 30px 0px;
 }
+
+@media only screen and (max-width: 600px) {
+  .bg {
+    display: none;
+  }
+  .homePage {
+    display: flex;
+    flex-direction: column;
+    color: white;
+  }
+  .buttonHomeContainer {
+    flex-direction: column;
+  }
+}

@@ -32,13 +32,13 @@ export default function RegisterUser() {
     <form className={styles.formRegister} onSubmit={handleFormOnSubmit}>
       <div className={styles.formSettings}>
         <p>Name :</p>
-        <input id="name" type="text" name="name" required/>
+        <input id="name" type="text" name="name" placeholder="Please input your name" required/>
         <p>E-mail :</p>
-        <input id="email" type="email" name="email" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
+        <input id="email" type="email" name="email" placeholder="Please input your e-mail" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" required/>
         <p>Gender male / female :</p>
-        <input id="gender" type="text" name="gender" required/>
+        <input id="gender" type="text" name="gender" placeholder="Please input (male/female)" required/>
         <p>Status active / inactive:</p>
-        <input id="status" type="text" name="status" required/>
+        <input id="status" type="text" name="status" placeholder="Please input your status" required/>
       </div>
         <button className="btn-secondary" type="submit">Register</button>
     </form>
